@@ -1,9 +1,9 @@
 FROM node:16.17.0-alpine as builder
 WORKDIR /app
-#COPY Netflix-clone/package.json .
+#COPY Netflix-clone/package.json ./
 #RUN cat ./package.json
-#COPY Netflix-clone/yarn.lock .
-COPY yarn.lock package.json ./
+#COPY Netflix-clone/yarn.lock ./
+COPY Netflix-clone/yarn.lock Netflix-clone/package.json ./
 RUN cat ./package.json
 RUN yarn install
 COPY . .
