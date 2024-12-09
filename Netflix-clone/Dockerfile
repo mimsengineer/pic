@@ -8,8 +8,9 @@ RUN cat ./package.json
 ARG TMDB_V3_API_KEY
 ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY}
 ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
-RUN cd /app
-RUN yarn build --verbose
+RUN cat /var/lib/jenkins/workspace/Netflix_pipeline/Netflix-clone/package.json
+RUN cat /app/package.json
+RUN yarn build 
 
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html
