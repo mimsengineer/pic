@@ -4,15 +4,14 @@ WORKDIR /app
 #RUN cat ./package.json
 #COPY Netflix-clone/yarn.lock ./
 COPY Netflix-clone/yarn.lock Netflix-clone/package.json ./
-RUN cat ./package.json
 RUN yarn install
 COPY . .
 ARG TMDB_V3_API_KEY
 ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY}
 ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
 RUN echo $VITE_APP_TMDB_V3_API_KEY
-RUN cat package.json
-RUN yarn run build
+#RUN yarn run build
+CMD ["yarn", "build"]
 
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html
