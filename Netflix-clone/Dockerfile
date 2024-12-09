@@ -1,8 +1,9 @@
 FROM node:16.17.0-alpine as builder
 WORKDIR /app
-COPY ./package.json /app
+COPY ./package.json .
+RUN cat /app/package.json
 
-COPY Netflix-clone/yarn.lock /app
+COPY Netflix-clone/yarn.lock .
 RUN yarn install
 COPY . .
 ARG TMDB_V3_API_KEY
