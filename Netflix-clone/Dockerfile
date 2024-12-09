@@ -8,7 +8,7 @@ RUN yarn install
 COPY . .
 ARG TMDB_V3_API_KEY
 ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY}
-ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
+ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3/movie/550?api_key=088c12a378ff3df2b8f96b3e2350da1e"
 RUN echo $VITE_APP_TMDB_V3_API_KEY
 RUN yarn run build
 
