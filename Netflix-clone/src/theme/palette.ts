@@ -18,7 +18,7 @@ const GREY = {
 };
 
 const COMMON = {
-  common: { black: "#000", white: "#fff" },
+  common: { black: "#fff", white: "#fff" },
   primary: { ...PRIMARY, contrastText: "#fff" },
   grey: GREY,
   action: {
